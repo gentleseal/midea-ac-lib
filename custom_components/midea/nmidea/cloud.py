@@ -5,7 +5,7 @@ import logging
 
 from threading import Lock
 
-from midea.security import security
+from security import security
 
 # The Midea cloud client is by far the more obscure part of this library, and without some serious reverse engineering
 # this would not have been possible. Thanks Yitsushi for the ruby implementation. This is an adaptation to Python 3

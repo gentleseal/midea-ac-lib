@@ -3,12 +3,12 @@ from enum import Enum
 
 import logging
 
-import midea.crc8 as crc8
-from midea.cloud import cloud
-from midea.command import appliance_response
-from midea.command import base_command as request_status_command
-from midea.command import set_command
-from midea.packet_builder import packet_builder
+import crc8 as crc8
+from cloud import cloud
+from command import appliance_response
+from command import base_command as request_status_command
+from command import set_command
+from packet_builder import packet_builder
 
 VERSION = '0.1.13'
 

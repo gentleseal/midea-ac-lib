@@ -1,6 +1,6 @@
 import logging
 
-import midea.crc8 as crc8
+import crc8 as crc8
 
 VERSION = '0.1.13'
 

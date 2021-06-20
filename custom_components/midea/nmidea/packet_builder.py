@@ -1,5 +1,5 @@
 
-from midea.command import base_command
+from command import base_command
 
 VERSION = '0.1.13'
 
