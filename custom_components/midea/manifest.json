@@ -1,10 +1,10 @@
 {
         "domain": "midea",
-        "name": "Midea Aircon",
+        "name": "Fresh Midea Aircon",
         "documentation": "",
-        "requirements": ["midea-andersonshatch==0.1.13", "pycryptodome"],
+        "requirements": ["pycryptodome"],
         "dependencies": [],
-        "codeowners": ["@andersonshatch"],
+        "codeowners": ["@gentleseal"],
         "homeassistant": "0.96.0",
         "version": "2021.1"
 }
