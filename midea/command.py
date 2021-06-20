@@ -21,7 +21,6 @@ class base_command:
 
     def finalize(self):
         # Add the CRC8
-        print(crc8.calculate(self.data[10:]))
         self.data.append(crc8.calculate(self.data[10:]))
         # Set the length of the command data
         self.data[0x01] = len(self.data)
