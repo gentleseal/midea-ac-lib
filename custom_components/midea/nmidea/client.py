@@ -5,10 +5,10 @@
 
 from typing import Dict, List
 
-from cloud import cloud
-from device import air_conditioning_device
-from device import dehumidifier_device
-from device import unknown_device
+from .cloud import cloud
+from .device import air_conditioning_device
+from .device import dehumidifier_device
+from .device import unknown_device
 
 VERSION = '0.1.13'
 

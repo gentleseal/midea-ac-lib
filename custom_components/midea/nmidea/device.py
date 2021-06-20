@@ -3,12 +3,11 @@ from enum import Enum
 
 import logging
 
-import crc8 as crc8
-from cloud import cloud
-from command import appliance_response
-from command import base_command as request_status_command
-from command import set_command
-from packet_builder import packet_builder
+from .cloud import cloud
+from .command import appliance_response
+from .command import base_command as request_status_command
+from .command import set_command
+from .packet_builder import packet_builder
 
 VERSION = '0.1.13'
 

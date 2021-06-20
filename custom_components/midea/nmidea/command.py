@@ -1,6 +1,6 @@
 import logging
 
-import crc8 as crc8
+from .crc8 import calculate as calculate_crc
 
 VERSION = '0.1.13'
 
@@ -21,7 +21,7 @@ class base_command:
 
     def finalize(self):
         # Add the CRC8
-        self.data.append(crc8.calculate(self.data[10:]))
+        self.data.append(calculate_crc(self.data[10:]))
         # Set the length of the command data
         self.data[0x01] = len(self.data)
         return self.data
