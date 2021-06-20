@@ -12,15 +12,17 @@ class base_command:
         # More magic numbers. I'm sure each of these have a purpose, but none of it is documented in english. I might make an effort to google translate the SDK
         self.data = bytearray([
             0xaa, 0x23, 0xAC, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x03, 0x02, 0x40, 0x81, 0x00, 0xff, 0x03, 0xff,
+            0x03, 0x02, 0x40, 0x81, 0x00, 0xff, 0x00, 0x00,
             0x00, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x03, 0xcc
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00
         ])
         self.data[0x02] = device_type
 
     def finalize(self):
         # Add the CRC8
-        self.data[0x1d] = crc8.calculate(self.data[16:])
+        print(crc8.calculate(self.data[10:]))
+        self.data.append(crc8.calculate(self.data[10:]))
         # Set the length of the command data
         self.data[0x01] = len(self.data)
         return self.data
@@ -91,7 +93,7 @@ class set_command(base_command):
     @swing_mode.setter
     def swing_mode(self, mode: int):
         self.data[0x11] &= ~ 0x0f  # Clear the mode bit
-        self.data[0x11] |= mode & 0x0f
+        # self.data[0x11] |= mode & 0x0f
 
     @property
     def turbo_mode(self):
